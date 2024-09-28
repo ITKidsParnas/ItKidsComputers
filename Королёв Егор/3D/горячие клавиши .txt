@@ -13,3 +13,10 @@ ctrl+c-сохранить
 ctrl+a-создать фигуру
 
 shift+D-ублировать обьект
+
+
+зажатый ctrl=вращение 5
+
+tab=edit mode
+
+зажат.shift=выделить несколько vertex,edge,face
