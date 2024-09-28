@@ -7,3 +7,5 @@ ctrl+Z-отменить действие
 ctrl+s-сохранить проект
 deleted-удалить
 shift+a-создать форму
+зажат shift выделить несколько vertex,edge,face
+tab-edit mode
