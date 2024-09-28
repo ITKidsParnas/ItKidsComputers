@@ -5,3 +5,5 @@ Ctrl+z назад
 Ctrl+сохранить
 Shift+a=созд фигуру
 Shift=D коп обект
+зажать.cntl-
+tab-edit mode
