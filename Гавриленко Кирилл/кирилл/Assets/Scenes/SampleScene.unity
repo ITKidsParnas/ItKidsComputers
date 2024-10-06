@@ -317,7 +317,7 @@ Transform:
   m_GameObject: {fileID: 749018207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.82, z: 0.9119005}
+  m_LocalPosition: {x: 0, y: -4.49, z: 0.9119005}
   m_LocalScale: {x: 1, y: 6.0999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -423,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 872117957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2731128, y: 0.5282642, z: 4.108799}
+  m_LocalPosition: {x: 2.2731128, y: 0.5282642, z: 3.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -772,7 +772,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 54
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -885,7 +885,7 @@ Transform:
   m_GameObject: {fileID: 1890324428}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.8, z: 0.9119005}
+  m_LocalPosition: {x: 0, y: 0.63, z: 1.71}
   m_LocalScale: {x: 1, y: -29.872084, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

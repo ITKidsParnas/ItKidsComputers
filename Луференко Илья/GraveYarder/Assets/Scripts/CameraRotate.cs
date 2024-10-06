@@ -9,7 +9,7 @@ public class CameraRotate : MonoBehaviour
     private float MouseX;
     private float MouseY;
     private float MouseZ;
-    public float mouseSpeed;
+    public float mouseSpeed; 
 
 
 
