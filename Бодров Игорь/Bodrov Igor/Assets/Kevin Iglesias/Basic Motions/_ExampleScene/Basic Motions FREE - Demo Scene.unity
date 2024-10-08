@@ -5133,10 +5133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Profile: {fileID: 0}
-  m_StaticLightingSkyUniqueID: 0
-  m_StaticLightingCloudsUniqueID: 0
-  m_StaticLightingVolumetricClouds: 0
 --- !u!4 &1792472704
 Transform:
   m_ObjectHideFlags: 1
