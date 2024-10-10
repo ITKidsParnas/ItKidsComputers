@@ -2100,6 +2100,26 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1280464917267161995, guid: 9650c348af697a345b97687c4ac8f362, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.60053813
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280464917267161995, guid: 9650c348af697a345b97687c4ac8f362, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7818451
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280464917267161995, guid: 9650c348af697a345b97687c4ac8f362, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7540873
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280464917267161995, guid: 9650c348af697a345b97687c4ac8f362, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6567743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280464917267161995, guid: 9650c348af697a345b97687c4ac8f362, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 21517.89
+      objectReference: {fileID: 0}
     - target: {fileID: 1801889539482565079, guid: 9650c348af697a345b97687c4ac8f362, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5133,10 +5153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Profile: {fileID: 0}
-  m_StaticLightingSkyUniqueID: 0
-  m_StaticLightingCloudsUniqueID: 0
-  m_StaticLightingVolumetricClouds: 0
 --- !u!4 &1792472704
 Transform:
   m_ObjectHideFlags: 1
