@@ -5,5 +5,8 @@ Ctrl+z назад
 Ctrl+сохранить
 Shift+a=созд фигуру
 Shift=D коп обект
-зажать.cntl-
+зажать.ctrl - крутим по 5 градусов
 tab-edit mode
+n-окно
+двигать или крутить- в objekt mode
+масштабируем в edit mode
