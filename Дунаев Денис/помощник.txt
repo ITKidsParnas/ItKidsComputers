@@ -10,3 +10,4 @@ shift+a-создать форму
 зажат shift выделить несколько vertex,edge,face
 tab-edit mode
 s+(x,y,z)+o
+a выдел всю фигуру
