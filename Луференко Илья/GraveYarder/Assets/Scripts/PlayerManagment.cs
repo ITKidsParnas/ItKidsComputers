@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManagment : MonoBehaviour
@@ -13,19 +14,53 @@ public class PlayerManagment : MonoBehaviour
     private GameObject currentItem;
     public GameObject player;
     private Vector3 playerTransform;
-    private bool isItemPickUp = false;
+    public bool isItemPickUp = false;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         isSprint = false;
     }
+    void PickUpItem()
+    {
+        // Поиск предмета в области поднятия
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Physics.Raycast(ray, out hit, pickUpRange))
+        {
+            GameObject item = hit.collider.gameObject;
 
+            // Убедитесь, что это именно предмет (добавьте нужные теги или идентификаторы)
+            if (item.CompareTag("Item")) // Предполагаем, что у предметов есть тег "Item"
+            {
+                isItemPickUp = true;
+                currentItem = item;
+                item.transform.SetParent(itemHoldPosition); // Поднятие предмета
+                item.transform.localPosition = player.transform.position; // Установка положения
+                item.GetComponent<Rigidbody>().isKinematic = true; // Отключение физики
+                
+            }
+        }
+    }
+
+    void ThrowItem()
+    {
+        isItemPickUp = false;
+        currentItem.transform.SetParent(null); // Убираем предмет из родителя
+        Rigidbody rb = currentItem.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = false; // Включаем физику для выбрасываемого предмета
+            rb.AddForce(Camera.main.transform.forward * 2); // Выбрасываем предмет вперед
+        }
+
+        currentItem = null; // Сбрасываем текущий элемент
+
+    }
     void Update()
     {
         var playerPos = player.transform.position;
-        horizontal = Input.GetAxis("Horizontal")*speed*Time.deltaTime;
-        vertical = Input.GetAxis("Vertical")*speed* Time.deltaTime;
+        horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.Translate(horizontal, 0, 0);
         transform.Translate(0, 0, vertical);
         playerPos = playerTransform;
@@ -53,40 +88,12 @@ public class PlayerManagment : MonoBehaviour
                 ThrowItem();
             }
         }
-    }
 
-    void PickUpItem()
-    {
-        // Поиск предмета в области поднятия
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, pickUpRange))
+        if (isItemPickUp)
         {
-            GameObject item = hit.collider.gameObject;
-
-            // Убедитесь, что это именно предмет (добавьте нужные теги или идентификаторы)
-            if (item.CompareTag("Item")) // Предполагаем, что у предметов есть тег "Item"
-            {
-                currentItem = item;
-                item.transform.SetParent(itemHoldPosition); // Поднятие предмета
-                item.transform.localPosition = player.transform.position; // Установка положения
-                item.GetComponent<Rigidbody>().isKinematic = true; // Отключение физики
-            }
+            currentItem.transform.localPosition = playerPos;
         }
-    }
-
-    void ThrowItem()
-    {
-        currentItem.transform.SetParent(null); // Убираем предмет из родителя
-        Rigidbody rb = currentItem.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = false; // Включаем физику для выбрасываемого предмета
-            rb.AddForce(Camera.main.transform.forward * 2); // Выбрасываем предмет вперед
-        }
-
-        currentItem = null; // Сбрасываем текущий элемент
+       
     }
 }
 
