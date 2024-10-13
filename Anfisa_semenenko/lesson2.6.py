@@ -11,7 +11,7 @@ def draw_spiral():
         pen.color(colors[i % 6])
         pen.width(i // 100 + 1)
         pen.forward(i)
-        pen.left(1000000000000000000000)
+        pen.left(2222222222222222222222222222222222222222000000000000000000000000000000000000000000000)
 
     turtle.done()
 
