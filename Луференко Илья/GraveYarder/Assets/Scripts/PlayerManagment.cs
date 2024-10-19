@@ -14,7 +14,7 @@ public class PlayerManagment : MonoBehaviour
     private GameObject currentItem;
     public GameObject player;
     private Vector3 playerTransform;
-    public bool isItemPickUp = false;
+    public static bool isItemPickUp = false;
     void Start()
     {
         isSprint = false;
@@ -34,9 +34,9 @@ public class PlayerManagment : MonoBehaviour
             {
                 isItemPickUp = true;
                 currentItem = item;
-                item.transform.SetParent(itemHoldPosition); // Поднятие предмета
-                item.transform.localPosition = player.transform.position; // Установка положения
-                item.GetComponent<Rigidbody>().isKinematic = true; // Отключение физики
+                item.transform.SetParent(itemHoldPosition);
+                item.transform.localPosition = player.transform.position;
+                item.GetComponent<Rigidbody>().isKinematic = true;
                 
             }
         }
@@ -44,13 +44,14 @@ public class PlayerManagment : MonoBehaviour
 
     void ThrowItem()
     {
-        isItemPickUp = false;
-        currentItem.transform.SetParent(null); // Убираем предмет из родителя
+        
+        currentItem.transform.SetParent(null);
         Rigidbody rb = currentItem.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.isKinematic = false; // Включаем физику для выбрасываемого предмета
-            rb.AddForce(Camera.main.transform.forward * 2); // Выбрасываем предмет вперед
+            rb.isKinematic = false;
+            rb.AddForce(Camera.main.transform.forward * 2);
+            isItemPickUp = false;
         }
 
         currentItem = null; // Сбрасываем текущий элемент

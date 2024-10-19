@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UsingController : MonoBehaviour
+public class UssingController : MonoBehaviour
 {
     public Material newMaterial; // Новый материал, который будет применен
     private Material originalMaterial; // Оригинальный материал объекта
