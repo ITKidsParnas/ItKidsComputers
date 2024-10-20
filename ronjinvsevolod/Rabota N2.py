@@ -3,4 +3,4 @@ print("Здарово", text)
 if text=="Сева":
     print("Приветик")
 elif text=="Олег":
-    print("Я не знаю тебя")
+    print("Я не знаю d")
