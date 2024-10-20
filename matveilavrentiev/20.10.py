@@ -41,7 +41,7 @@ class student(person):
 
 alexander2 = student("alexander2",10)
 
-alexander2.sayname()
+alexander2.sayname()s
 alexander2.study()
 
 
