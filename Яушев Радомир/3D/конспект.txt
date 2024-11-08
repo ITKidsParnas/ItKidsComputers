@@ -10,3 +10,6 @@ tab-edit mode
 n-окно
 двигать или крутить- в objekt mode
 масштабируем в edit mode
+
+Текстуры нельзя ярикие цвета
+вкладка  material - base color - image texture - открываем наш пнг
