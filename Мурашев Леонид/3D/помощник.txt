@@ -17,3 +17,12 @@ alt edge
 m схлопнути
 n окно
 scale 1 
+
+ТЕКСТУРИРОВАНИЕ
+
+никаких ярких цветов!!!!!
+название текстуры - base_room_color
+
+вкладка material - new material - желтый кружочек - image texture - open - выбираем нашу текстуру
+
+чтобы отрезать: ПКМ - UV unwrap faces - unwrap
