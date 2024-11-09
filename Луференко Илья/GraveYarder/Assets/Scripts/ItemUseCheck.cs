@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemUseCheck : MonoBehaviour
 {
 
-    public BoxCollider cubeCollider; // Флаг для отслеживания, находится ли игрок в триггере
+    public BoxCollider cubeCollider; 
 
     void Start()
     {

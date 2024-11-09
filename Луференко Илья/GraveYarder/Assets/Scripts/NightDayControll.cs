@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class NightDayControll : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public Light sun; // Ссылка на Directional Light
-    public float dayLength = 1440f; // Длина дня в секундах
+    
+    public Light sun; 
+    public float dayLength = 1440f; 
 
     private float rotationSpeed;
 
     void Start()
     {
-        rotationSpeed = 360f / dayLength; // Угол вращения за секунду
+        rotationSpeed = 360f / dayLength; 
     }
 
     void Update()
     {
-        // Поворачиваем солнце
         sun.transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
     }
 }

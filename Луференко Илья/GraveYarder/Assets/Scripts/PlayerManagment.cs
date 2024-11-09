@@ -21,16 +21,13 @@ public class PlayerManagment : MonoBehaviour
     }
     void PickUpItem()
     {
-        // Поиск предмета в области поднятия
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
             GameObject item = hit.collider.gameObject;
-
-            // Убедитесь, что это именно предмет (добавьте нужные теги или идентификаторы)
-            if (item.CompareTag("Item")) // Предполагаем, что у предметов есть тег "Item"
+            if (item.CompareTag("Item")) 
             {
                 isItemPickUp = true;
                 currentItem = item;
@@ -54,7 +51,7 @@ public class PlayerManagment : MonoBehaviour
             isItemPickUp = false;
         }
 
-        currentItem = null; // Сбрасываем текущий элемент
+        currentItem = null;
 
     }
     void Update()
