@@ -14,4 +14,4 @@ def commandresponse(message):
 def text_reponse(message):
     print(message.chat.username, ":", message.text)
     bot.reply_to(message, message.text)
-bot.infinity_polling()s
+bot.infinity_polling()
