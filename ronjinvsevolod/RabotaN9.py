@@ -9,4 +9,3 @@ Seva=Person("Seva",9)
 Maya=Person("Maya",5)
 
 Seva.sayname()
-ssss
