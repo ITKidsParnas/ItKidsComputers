@@ -17,7 +17,6 @@ F
 
 не используем яркие цвета!!!
 
-1) вкладка materials --- base color --- image texture --- open --- выбираем наш пнг
-
-6th_monkey
+UV editing: вкладка material - new - base color - желтый кружочек - image texture - open - наша текстура
+Чтобы отрезать часть: Правая кнопка мыши - UV unwrap faces - unwrap
 
