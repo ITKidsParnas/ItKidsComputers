@@ -18,5 +18,6 @@ public class NightDayControll : MonoBehaviour
     void Update()
     {
         sun.transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
+        //LightingSettings
     }
 }
