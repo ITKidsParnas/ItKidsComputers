@@ -11,7 +11,11 @@ public class NewBehaviourScript : MonoBehaviour
         
         
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        GetComponent<MeshRenderer>().materials[0].color = Color.blue;
 
+    }
     // Update is called once per frame
     void Update()
     {
