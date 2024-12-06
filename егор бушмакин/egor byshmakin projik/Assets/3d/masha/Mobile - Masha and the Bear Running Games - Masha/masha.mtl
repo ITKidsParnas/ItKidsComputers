@@ -1,0 +1,25 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl body
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.759685 0.759685 0.759685
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd masha_classic_dress.png
+
+newmtl hair
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd via_volossa albedo.png
+map_d C:\\Users\\Alisson\\Downloads\\Random APKS\\4\\Texture2D\\via_volossa albedo.png

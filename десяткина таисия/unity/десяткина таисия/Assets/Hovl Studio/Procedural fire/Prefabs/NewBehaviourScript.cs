@@ -7,12 +7,15 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("hello");
-    }
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        GetComponent<MeshRenderer>().materials[0].color = Color.black;
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        print("hello");
     }
 }
