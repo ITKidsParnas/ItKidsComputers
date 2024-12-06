@@ -423,7 +423,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 85175332869622652, guid: 0c2a778ecb1e0c741b869d9e7d4e05bb, type: 3}
       propertyPath: m_Name
-      value: Terrain
+      value: doremu  tereyn
       objectReference: {fileID: 0}
     - target: {fileID: 2752769143042469831, guid: 0c2a778ecb1e0c741b869d9e7d4e05bb, type: 3}
       propertyPath: m_LocalPosition.x
