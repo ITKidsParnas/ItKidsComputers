@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.UIElements;
+
+public class playControiier : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position,
+        new Vector3(transform.position.x + Input.GetAxis("Horizontal"),
+        transform.position.y, transform.position.z + Input.GetAxis("Vertical")), Time.deltaTime * 5);
+    }
+}
