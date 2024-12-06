@@ -1,17 +1,28 @@
-using UnityEngine;
+ using UnityEngine;
 
 public class test : MonoBehaviour
 {
+    public Color color; 
+    public bool canRepaint;
+
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
            
     }
     // Update is called once per frame
     void Update()
     {
-        print("н ям ням");
+
+       
     }
-        
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (canRepaint)
+        {
+        GetComponent<MeshRenderer>().materials[0].color =  color;
+        } 
+
+    }
 }
 
