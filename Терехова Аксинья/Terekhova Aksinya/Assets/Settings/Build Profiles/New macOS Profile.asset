@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: New macOS Profile
+  m_EditorClassIdentifier: 
+  m_BuildTarget: 2
+  m_Subtarget: 2
+  m_PlatformId: 0d2129357eac403d8b359c2dcbf82502
+  m_PlatformBuildProfile:
+    rid: 5019037926753304578
+  m_Scenes:
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/Scenes/Boot.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/1_Factory/Factory.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/2_ObjectPool/ObjectPool.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/3_Singleton/Singleton.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/4_Command/Command.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/5_State/State.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/6_Observer/Observer.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/7_MVP_UIToolkit/MVP_UIToolkit.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/7_MVVM/MVVM.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/8_Strategy/Strategy.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/9_Flyweight/Flyweight.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/DirtyFlag.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_SOLID/1_SingleResponsibility/SingleResponsibility.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_SOLID/2_OpenClosed/OpenClosed.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_SOLID/3_LiskovSubstitution/LiskovSubstitution.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_SOLID/4_InterfaceSegregation/InterfaceSegregation.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_SOLID/5_DependencyInversion/DependencyInversion.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector0-0.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector0-1.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector0-2.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector0-3.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector1-0.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector1-2.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector1-3.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector2-0.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector2-1.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector2-2.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector2-3.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector3-0.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector3-1.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector3-2.unity
+  - m_enabled: 1
+    m_path: Assets/UnityTechnologies/LevelUpYourCode/_DesignPatterns/10_DirtyFlag/SubScenes/Sector3-3.unity
+  m_ScriptingDefines: []
+  m_PlayerSettingsYaml:
+    m_Settings: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5019037926753304578
+      type: {class: OSXStandaloneBuildProfile, ns: UnityEditor.OSXStandalone, asm: UnityEditor.OSXStandalone.Extensions}
+      data:
+        m_Development: 0
+        m_ConnectProfiler: 0
+        m_BuildWithDeepProfilingSupport: 0
+        m_AllowDebugging: 0
+        m_WaitForManagedDebugger: 0
+        m_ManagedDebuggerFixedPort: 0
+        m_ExplicitNullChecks: 0
+        m_ExplicitDivideByZeroChecks: 0
+        m_ExplicitArrayBoundsChecks: 0
+        m_CompressionType: 0
+        m_InstallInBuildFolder: 0
+        m_MacOSXcodeBuildConfig: 1
+        m_Architecture: 2
+        m_CreateXcodeProject: 0

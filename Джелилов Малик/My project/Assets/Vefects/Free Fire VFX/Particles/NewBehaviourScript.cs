@@ -17,4 +17,6 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<MeshRenderer>().materials[0].color = Color.yellow
+        GetComponent<MeshRenderer>().materials[0].color = Color.yellow;
+    }
+}
