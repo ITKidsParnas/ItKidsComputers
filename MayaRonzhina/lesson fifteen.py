@@ -1,0 +1,6 @@
+import pyttsx3
+
+engine = pyttsx3.init()
+
+engine.say("hdhxguksrdxhguiehzdulerarhdsbnfxmdughbndkxjfgvbdfkjxghayusuhgdfzuyhybjkvjfhgrtfhvjfhrgyfeujkjhguydthesy74ey5uiey56w75h3yty328iugb8uerihfnOSHVSDILZ;VFiyGAKG;HADUFIGDRUUGHNDHSGHSUENGYUEHRTGJKKDBZFGJDSNNGJKVSDHKSGHDSBGSNYDRHG")
+engine.runAndWait()

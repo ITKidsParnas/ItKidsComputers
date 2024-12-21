@@ -5,15 +5,21 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public bool isRepaint; 
     public Color color;
     public Rigidbody boby;
+
     private void OnCollisionEnter(Collision collision)
     {
-        GetComponent<MeshRenderer>().materials[0].color = Color.blue;
+        if (isRepaint)     
+        {          
+           GetComponent<MeshRenderer>().materials[0].color = Color.blue;  
+        }
+        
         
     }
-    private void OnCollisionExit(Collision collision)
-    {
-         GetComponent<MeshRenderer>().materials[0].color = Color.black;
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //     GetComponent<MeshRenderer>().materials[0].color = Color.black;
+    //}
 }

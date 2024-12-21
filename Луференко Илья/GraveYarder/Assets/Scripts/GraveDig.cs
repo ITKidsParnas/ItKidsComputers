@@ -5,15 +5,29 @@ using UnityEngine.UI;
 
 public class GraveDig : MonoBehaviour
 {
-    public Image fadeImage; // Ссылка на изображение для затемнения
+    private bool isPlayerInTrigger = false;
+    public Image fadeImage;
     private bool isFading = false;
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInTrigger = false; 
+        }
+    }
     void OnTriggerEnter(Collider other)
     {
-        // Проверяем, что объект, вошедший в триггер, - это игрок
-        if (other.CompareTag("Player") && !isFading)
+        if (other.CompareTag("Player"))
         {
-            StartCoroutine(FadeToBlack());
+            isPlayerInTrigger = true;
+        }
+    }
+    public void Update()
+    {
+        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E) && !isFading)
+        {
+            StartCoroutine(FadeToBlack()); 
         }
     }
 
@@ -21,23 +35,20 @@ public class GraveDig : MonoBehaviour
     {
         isFading = true;
         float time = 0f;
-
-        // Затемняем экран
         while (time < 1f)
         {
-            time += Time.deltaTime / 5f; // 5 секунд
-            fadeImage.color = new Color(0, 0, 0, time); // Изменяем альфа-канал
+            time += Time.deltaTime / 3f;
+            fadeImage.color = new Color(0, 0, 0, time);
             yield return null;
         }
 
-        yield return new WaitForSeconds(1f); // Ждем 5 секунд с черным экраном
+        yield return new WaitForSeconds(1f);
 
-        // Возвращаем исходный вид
         time = 1f;
         while (time > 0f)
         {
-            time -= Time.deltaTime / 5f; // 5 секунд
-            fadeImage.color = new Color(0, 0, 0, time); // Изменяем альфа-канал
+            time -= Time.deltaTime / 3f;
+            fadeImage.color = new Color(0, 0, 0, time);
             yield return null;
         }
 

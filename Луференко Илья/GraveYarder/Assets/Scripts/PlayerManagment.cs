@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class PlayerManagment : MonoBehaviour
 {
- 
+    private float sprintMultiplier = 2f; 
+    private float moveSpeed = 20f;
+    private Rigidbody rb;
     public float speed = 0.5f;
     public static float vertical, horizontal;
     public bool isSprint;
@@ -15,9 +17,11 @@ public class PlayerManagment : MonoBehaviour
     public GameObject player;
     private Vector3 playerTransform;
     public static bool isItemPickUp = false;
+    public Transform cameraTransform;
     void Start()
     {
         isSprint = false;
+        rb = GetComponent<Rigidbody>();
     }
     void PickUpItem()
     {
@@ -54,27 +58,53 @@ public class PlayerManagment : MonoBehaviour
         currentItem = null;
 
     }
+
+    private void Move()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        // Создаем вектор движения
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+        // Нормализуем вектор, чтобы избежать ускорения при движении по диагонали
+        if (movement.magnitude > 1)
+        {
+            movement.Normalize();
+        }
+
+        // Определяем текущую скорость
+        float currentSpeed = moveSpeed;
+
+        // Увеличиваем скорость при спринте
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currentSpeed *= sprintMultiplier;
+        }
+
+        // Поворачиваем игрока в направлении камеры
+        Vector3 cameraForward = cameraTransform.forward; // Получаем вектор вперед от камеры
+        cameraForward.y = 0; // Убираем вертикальную составляющую
+        Vector3 cameraRight = cameraTransform.right; // Получаем вектор вправо от камеры
+
+        // Вычисляем новое направление движения игрока на основе направления камеры
+        Vector3 desiredDirection = cameraForward * movement.z + cameraRight * movement.x;
+
+        // Если направление не нулевое, поворачиваем игрока
+        if (desiredDirection.magnitude > 0)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(desiredDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f); // Плавный поворот
+        }
+
+        // Применяем движение к Rigidbody
+        rb.MovePosition(transform.position + desiredDirection.normalized * currentSpeed * Time.deltaTime);
+    }
     void Update()
     {
+        Move();
         var playerPos = player.transform.position;
-        horizontal = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        vertical = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        transform.Translate(horizontal, 0, 0);
-        transform.Translate(0, 0, vertical);
         playerPos = playerTransform;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            if (!isSprint)
-            {
-                speed = 10;
-                isSprint = true;
-            }
-            else
-            {
-                speed = 5;
-                isSprint = false;
-            }
-        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (currentItem == null)

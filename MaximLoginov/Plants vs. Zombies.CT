@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>19C36480</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"чит на не трачу денег"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>loadlibrary(luaclient-i386.dll)
+luacall(openLuaServer('CELUASERVER'))
+
+CELUA_ServerName:
+db 'CELUASERVER',0
+
+{
+//luacall call example:
+push integervariableyouwishtopasstolua
+push addresstostringwithfunction  //(The lua function will have access to the variable passed by name "parameter")
+call CELUA_ExecuteFunction
+
+//------
+//Alternate call by ref example:
+
+mov eax,[addresswithluafunctionidstored]
+test eax,eax
+jne short hasrefid
+
+push addresswithluafunctionname
+call CELUA_GetFunctionReferenceFromName  //Basically calls createRef(functionname) and returns the value
+mov [addresswithluafunctionidstored],eax
+hasrefid:
+mov [addresswithparameterlist],param1
+mov [addresswithparameterlist+4],param2
+mov [addresswithparameterlist+8],param3
+//...
+push 0 //0=no async, 1=async.  Use async if you do not wish to update the GUI. Faster
+push addresswithparameterlist
+push numberofparameterstopass
+push eax //push the reference ID of the function
+call CELUA_ExecuteFunctionByReference
+
+When done EAX will contain the result of the lua function
+And as per common 32-bit calling convention, EDX and ECX could have been altered. So save/restore them beforehand
+}
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+nop
+
+exit:
+jmp returnhere
+
+"popcapgame1.exe"+1F636:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"popcapgame1.exe"+1F636:
+db 89 B7 78 55 00 00
+//mov [edi+00005578],esi
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1A33F338</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>19C9D3F0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1839BFA8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1A33F338</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"солнышко прибавляет 1000"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+add [eax+00005578],#1000
+
+exit:
+jmp returnhere
+
+"popcapgame1.exe"+1F4D0:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"popcapgame1.exe"+1F4D0:
+db 01 88 78 55 00 00
+//add [eax+00005578],ecx
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>0C2D89A4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>1A33F338</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>001E07E0</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
