@@ -16,23 +16,27 @@ public class WFX_LightFlicker : MonoBehaviour
 	
 	void Start ()
 	{
-		timer = time;
-		StartCoroutine("Flicker");
+		//timer = time;
+		//StartCoroutine("Flicker");
+        Invoke("Disable", time);
 	}
-	
-	IEnumerator Flicker()
-	{
-		while(true)
-		{
-			GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
-			
-			do
-			{
-				timer -= Time.deltaTime;
-				yield return null;
-			}
-			while(timer > 0);
-			timer = time;
-		}
-	}
+    private void Disable()
+    {
+        gameObject.SetActive(false);
+    }
+    //IEnumerator Flicker()
+    //{
+    //	while(true)
+    //	{
+    //		GetComponent<Light>().enabled = !GetComponent<Light>().enabled;
+
+    //		do
+    //		{
+    //			timer -= Time.deltaTime;
+    //			yield return null;
+    //		}
+    //		while(timer > 0);
+    //		timer = time;
+    //	}
+    //}
 }

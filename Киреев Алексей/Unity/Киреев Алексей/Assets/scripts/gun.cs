@@ -6,6 +6,7 @@ public class gun : MonoBehaviour
 {
     public GameObject effect;
     public AudioSource audioSource;
+    public Rigidbody[] rigidbodies;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +16,14 @@ public class gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKey(KeyCode.Space)) 
+       if(Input.GetKeyDown(KeyCode.Space)) 
         {
             effect.SetActive(true);
             audioSource.Play();
+            foreach (var rigidbody in rigidbodies)
+            { 
+                rigidbody.isKinematic = false;
+            }
         } 
     }
 }
