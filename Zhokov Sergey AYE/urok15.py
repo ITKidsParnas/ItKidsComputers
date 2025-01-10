@@ -100,7 +100,7 @@ def video_note_proccesing(message):
     os.remove(file_name_full_converted)
 
 
-Ы
+
 bot.infinity_polling()
 
 
