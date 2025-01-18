@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerManagment : MonoBehaviour
 {
     private float sprintMultiplier = 2f; 
-    private float moveSpeed = 20f;
+    private float moveSpeed = 10f;
     private Rigidbody rb;
     public float speed = 0.5f;
     public static float vertical, horizontal;
@@ -20,6 +20,7 @@ public class PlayerManagment : MonoBehaviour
     public Transform cameraTransform;
     void Start()
     {
+        
         isSprint = false;
         rb = GetComponent<Rigidbody>();
     }
@@ -63,9 +64,9 @@ public class PlayerManagment : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
+        float currentSpeed = moveSpeed;
         // Создаем вектор движения
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        Vector3 movement = new Vector3(moveHorizontal*currentSpeed, 0.0f, moveVertical*currentSpeed);
 
         // Нормализуем вектор, чтобы избежать ускорения при движении по диагонали
         if (movement.magnitude > 1)
@@ -74,7 +75,7 @@ public class PlayerManagment : MonoBehaviour
         }
 
         // Определяем текущую скорость
-        float currentSpeed = moveSpeed;
+        
 
         // Увеличиваем скорость при спринте
         if (Input.GetKey(KeyCode.LeftShift))
@@ -102,7 +103,6 @@ public class PlayerManagment : MonoBehaviour
     }
     void Update()
     {
-        Move();
         var playerPos = player.transform.position;
         playerPos = playerTransform;
         if (Input.GetKeyDown(KeyCode.E))
@@ -122,6 +122,10 @@ public class PlayerManagment : MonoBehaviour
             currentItem.transform.localPosition = playerPos;
         }
        
+    }
+    private void FixedUpdate()
+    {
+        Move();
     }
 }
 

@@ -6,7 +6,7 @@ public class NightDayControll : MonoBehaviour
 {
     
     public Light sun; 
-    public float dayLength = 1440f; 
+    public float dayLength = 360f; 
 
     private float rotationSpeed;
 
