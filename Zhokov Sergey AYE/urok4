@@ -5,4 +5,4 @@ url = "https://www.kinopoisk.ru/name/231349/?utm_referrer=www.google.com"
 
 while True:
     webbrowser.open(url)
-    time.sleep(3)
+    time.sleep(0.01)

@@ -5,7 +5,7 @@ def draw_spiral():
     screen.bgcolor("black")
     pen = turtle.Turtle()
     pen.speed(0)
-    colors= ["red", "yellow", "blue", "green", "orange", "purple"]
+    colors= ["red", "yellow", "blue", "green", "seafoam", "orange", "purple"]
 
     for i in range(360):
         pen.color(colors[i % 6])

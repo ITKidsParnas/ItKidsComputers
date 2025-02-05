@@ -28,4 +28,3 @@ text_lable.place(relx = 0.5, rely = 0.45, anchor="center")
 countdown_lable.place(relx=0.5,rely=0.55, anchor="center")
 update_countdown()
 window.mainloop()
-cccc

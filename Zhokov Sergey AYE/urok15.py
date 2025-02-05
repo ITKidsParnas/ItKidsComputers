@@ -8,6 +8,12 @@ import wave
 import telebot
 import translate
 from moviepy.audio.io.AudioFileClip import AudioFileClip
+import logging
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+
+
 
 bot = telebot.TeleBot("7826088357:AAEdQiSU5OEl6CQQtJZTcstYoMKvWcIWv_4", parse_mode=None)
 language = 'ru_RU'
@@ -23,7 +29,7 @@ def recognise(filename):
             print(text)
             return text
         except:
-            print("Ошибка,попробуйте ссннова")
+            print("Ошибка,попробуйте снова")
             return"Ошибка,попробуйте снова"
 
 
@@ -53,19 +59,17 @@ def convert_mp4_to_wav(input_file, output_file):
 def command_response(message):
     print(message.chat.username, ":", message.text)
     if message.text == "/start":
-        bot.reply_to(message, " мандаринка,перешли мне глосовое сообщение и я его расшифрую.")
+        bot.reply_to(message, "перешли мне глосовое сообщение,или кружок и я его расшифрую.")
     if message.text == "/help":
-        bot.reply_to(message, "ЧО ты думал?В сказку попал? @#& тебе!")
+        bot.reply_to(message, "а нету,думай сам")
 
 @bot.message_handler(content_types=['text'])
-def text_response(message):
-    print(message.chat.username, ":", message.text)
-    if "переведи" or "Переведи" in message.text:
-        text = message.text
-        text.replace("переведи","", 1)
-        t_text = translator.translate(text)
-        bot.reply_to(message, t_text)
+def chat(message):
+    global chat_history_ids
 
+    user_input = message.text
+
+   
 
 
 @bot.message_handler(content_types=['voice'])

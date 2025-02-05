@@ -10,7 +10,6 @@ public class Bot : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -18,7 +17,7 @@ public class Bot : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-       var player = other.gameObject;
+        var player = other.gameObject.GetComponent<FirstPersonController>();
         if (player != null)
         {
             target = player.transform;
@@ -26,7 +25,7 @@ public class Bot : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        var player = other.gameObject;
+        var player = other.gameObject.GetComponent<FirstPersonController>();
         if (player != null)
         {
             target  = null;
@@ -38,6 +37,11 @@ public class Bot : MonoBehaviour
         {
             agent.destination = target.position;
             transform.LookAt(new Vector3(agent.destination.x, transform.position.y, agent.destination.z));
+            var distance = Vector3.Distance(agent.destination, transform.position);
+            if (distance < 0.6f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
         else
         {
