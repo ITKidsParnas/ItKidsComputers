@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharController_Motor : MonoBehaviour {
 
+	public int itemCount;
+	public int itemCountMax;
 	public float speed = 10.0f;
 	public float sensitivity = 30.0f;
 	public float WaterHeight = 15.5f;
@@ -24,8 +27,31 @@ public class CharController_Motor : MonoBehaviour {
 		}
 	}
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        var item= hit.collider.gameObject.GetComponent<item>();
+	if (item != null)
+		{
+			itemCount++;
+			if (itemCount > itemCountMax)
+			{
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+				Destroy(item.gameObject);
+            }
+		}
+    }
+    public void ItemPick(GameObject obj)
+    {
 
-	void CheckForWaterHeight(){
+            itemCount++;
+            if (itemCount > itemCountMax)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            }
+                        Destroy(obj);
+    }
+    void CheckForWaterHeight(){
 		if (transform.position.y < WaterHeight) {
 			gravity = 0f;			
 		} else {

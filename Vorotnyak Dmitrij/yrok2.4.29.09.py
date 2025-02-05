@@ -7,3 +7,4 @@ while True:
     y = random.randint(0, pyautogui.size().height)
     pyautogui.moveTo(x,y,duration=0.5)
     time.sleep(1)
+    pyautogui.write('Hello world!', interval=0.05)
