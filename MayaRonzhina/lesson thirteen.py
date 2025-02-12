@@ -6,10 +6,10 @@ def draw():
     pen = turtle.Turtle()
     pen.speed(0)
 
-    colors = ["red", "pink"]
+    colors = ["red", "pink", "blue", "green", "yellow"]
 
     for i in range(750):
-        pen.color(colors[i%2])
+        pen.color(colors[i%5])
         pen.width(i//100+1)
         pen.forward(i)
         pen.left(59)

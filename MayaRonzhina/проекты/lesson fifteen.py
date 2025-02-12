@@ -1,6 +1,6 @@
 import pyttsx3
-
+#создает объект воспроизведения 
 engine = pyttsx3.init()
-
-engine.say("hdhxguksrdxhguiehzdulerarhdsbnfxmdughbndkxjfgvbdfkjxghayusuhgdfzuyhybjkvjfhgrtfhvjfhrgyfeujkjhguydthesy74ey5uiey56w75h3yty328iugb8uerihfnOSHVSDILZ;VFiyGAKG;HADUFIGDRUUGHNDHSGHSUENGYUEHRTGJKKDBZFGJDSNNGJKVSDHKSGHDSBGSNYDRHG")
+engine.setProperty("rate", 1)
+engine.say("привет")
 engine.runAndWait()

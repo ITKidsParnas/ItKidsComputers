@@ -11,3 +11,13 @@ shift+a-создать форму
 tab-edit mode
 s+(x,y,z)+o
 a выдел всю фигуру
+_____________________________________
+модифекаторы 
+Array-конвейер 
+Mirror-зеркало 
+Bevel-скругление углов
+Subdivision Surfase-скруглен
+E+S=extrude по ширине
+Decimate-истребитель полей
+Boolean-огрызок
+Solidify-широкий
