@@ -7,24 +7,39 @@ using UnityEngine;
 
 namespace DesignPatterns
 {
+   
     public class TriggerTest : MonoBehaviour
     {
+        public GameObject[] Objects ;
+            
         public int[] nums;
-      
+        
+        void Start()
+        {
+            foreach (int num in nums)
+            {
+                Debug.Log(num);
+            }
+        }
+       
         private void OnTriggerExit(Collider other)
         {
             other.GetComponent<MeshRenderer>().materials[0].color = Color.white;
-
+        foreach (GameObject obj in Objects) 
+        {
+                obj.SetActive(false);
         }
+    }
         private void OnTriggerEnter(Collider other)
         {
             other.GetComponent<MeshRenderer>().materials[0].color = color;
-        }
-           public Color color;
-        void Start()
+        foreach (GameObject obj in Objects) 
         {
-            Debug.Log(nums[252]);
+                obj.SetActive(true);
         }
+    }
+           public Color color;
+
 
 
         void Update()

@@ -10,7 +10,13 @@ public class arrayTest : MonoBehaviour
     {
         Debug.Log(transforms[0].name);
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        foreach (var item1 in transforms)
+        {
+     item.psi       
+        }
+    }
     // Update is called once per frame
     void Update()
     {
