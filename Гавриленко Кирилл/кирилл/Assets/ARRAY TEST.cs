@@ -11,7 +11,7 @@ public class ARRAYTEST : MonoBehaviour
         Debug.Log(Transforms[0].name);   
     }
     private void OnCollisionEnter(Collision collision)
-    
+    { 
         foreach (var item in Transforms)
         {
             

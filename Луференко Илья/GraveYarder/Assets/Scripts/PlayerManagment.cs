@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class PlayerManagment : MonoBehaviour
 {
-    private float sprintMultiplier = 2f; 
+    private float sprintMultiplier = 2f;
     private float moveSpeed = 5f;
     private Rigidbody rb;
-    public float speed = 0.5f;
     public static float vertical, horizontal;
     public bool isSprint;
     public float pickUpRange = 2;

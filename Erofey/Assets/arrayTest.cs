@@ -7,7 +7,10 @@ public class arrayTest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+for (int i = 0; i <10; i++)
+        {
+            
+        } 
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,6 +22,6 @@ public class arrayTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   `                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     }
 }

@@ -9,13 +9,20 @@ public class NewBehaviourScript : MonoBehaviour
     public Color color;
     public Rigidbody boby;
     public int[] nums;
-    //int целые числа 2 4 56 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84
+    //int целые числа 2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 72 74 76 78 80 82 84
     //flot дробные числа 
     //string строка 
-    // dool tru fols
+    // bool tru false
     private void Start()
     {
-        Debug.Log(nums[0]);
+        //foreach (var item in nums)
+        //    Debug.Log(item);
+        //}
+        //Debug.Log(nums[0]);
+        for (int i = 1; i < nums.Length; i++)
+        {
+            Debug.Log(nums[i - 1] * nums[i]);
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
