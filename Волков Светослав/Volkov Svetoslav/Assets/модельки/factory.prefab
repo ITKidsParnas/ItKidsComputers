@@ -79,9 +79,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c72def2cf764aad4ab0204888aa66df4, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4573304721533506108}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c72def2cf764aad4ab0204888aa66df4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -1469006396310647294}
   m_SourcePrefab: {fileID: 100100000, guid: c72def2cf764aad4ab0204888aa66df4, type: 3}
 --- !u!1 &571831910859757033 stripped
 GameObject:
@@ -102,18 +99,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gc: {fileID: 0}
   moneyInSec: 75
---- !u!114 &-1469006396310647294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571831910859757033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69002bb70ba000d469f23ade7b67c78e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gc: {fileID: 0}
-  house: {fileID: -4573304721533506108}
-  cost: 900

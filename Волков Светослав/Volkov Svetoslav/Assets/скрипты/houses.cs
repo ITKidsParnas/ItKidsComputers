@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class houses : MonoBehaviour
 {
-    public GAmecontroler gc;
     public float moneyInSec;
+    public int cost;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class houses : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gc.money += moneyInSec * Time.deltaTime;
+        GAmecontroler.instans.money += moneyInSec * Time.deltaTime;
             
     }
 }
