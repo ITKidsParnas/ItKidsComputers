@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class menu : MonoBehaviour
+{
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    // Start is called before cethe first frame update
+    void Start()
+    {
+      
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

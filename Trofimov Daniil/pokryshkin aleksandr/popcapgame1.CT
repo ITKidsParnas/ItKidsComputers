@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <Forms>
+    <CETrainer Class="TTrainerForm" Encoding="Ascii85">=N-Zj/3tqIBi3[[Q@6UsBgKM)8fpmqfh?}oGbUD98Zxt@EnV9xx7DszJI;6W.(**fk}K?uo*6#$+wa$WlI/i@(4v^#wYvKro!foxx%$kKq_onOJqbgKk]!o/)52}m/:e;,rcC_wMC)H]n:_z+Sq.fb:]=PVn9bGS/fap]/Q80#GD?(,JDt)1u:6SmN7uTGRxBZ?R;M7UaRMo.z-.kefpsBEW?)r#!S?HsojyukOft{_.:wmZ3(ST[lEdmBtw/12fYjv;K)!!37-B:RL*QydIAMI!3[RZ)JK//tWTM1JiAW,5r6EZM5A#t9+z#V7W5.*^y]cz[9tnyY4)4:q4dHyB*qz^UgOul}o0Hoi+#L!D%#POVVD^e+LWzwKO-3^Zs;o7^)^k4tBg?X3F[P__u%M?u@puO7oq8sh@nSF0IobFWrpcXQ7F3t}8?j:eI5DeB)WXQ451F:jx(#x;Gr{E}hH%GoDyD/v9VoIb80[!qp$MLe:_1Oxa}:=j9eRXs/[UwASnraJ2tC/uw}^#};oiW%+:wa*jo(CuTjZKEOAX?%C7T_XmeJ{[w1mv)R3IX0tX#AOs+?(5l+:Jl0mSMbQZo/jk!YQbA!3GI3=UX7oEC2$PF7q@1xY*=74h.q4TL+^V:oP7%{5=-R#I+[6S8K7F1Z$Ut9TW/tnN)G]7mH*WeQOZmS[fz!S}J!?9?IZQ:unicVRUFAqPER6j)IpK#}:5u?lUx-C1tmbHYNPPn_TH6MjE2/j}J_b-1VDkB[$G1KmU!6-l1g%bZIE(:[sFjz6gv$2sGp/?WLN5%xvBE,)pY,Z}PqZ)qe#WwsBBOdZQ-eL}-r$s[vQ:clPYlh1wt$[^6hnJzw/+$uSdAR1ca+g9Gi@bE8RG@A4P0eg!/+CyFDN#U=0,lSsXmh1afid!9]31GWF3SW9{hE8Ya70q2Swu;y9//*+(DM.%Rwt%.]k0=hkL{+Ag.%V0l-0^E/2czpf+!W?C(udt3I@{vlg4MWq05Po*%#_9VnIb;P@V^.Y_B]e!kGSSCHgf{rcE#R;DOzJ?dU3*w!luepG_gocKYM9([l^@H[=(.yg*dRj8!orMZhwFO*ApD5KU+RK7p}gc,h5Gwm[.*_,)C=1Ipk{CLL/Us=xwk:2?uojqbz5]E5fk)m:li^6aI3P[cuk{%7b_a[w$xNFz?dU@8R!$?7z8voh+ap1jD7,@Ix67^l2kRagVx2Z7h$vhG-p,SGI75@Ly)?*+yZ=^,14VS9^mHuKw;]AJ*4n:PNz0[PU3/nE0!zy4c;_RpoN)UKf-80R</CETrainer>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"Auto Assemble script"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+add [eax+00005578],#1000000
+
+
+exit:
+jmp returnhere
+
+"popcapgame1.exe"+1F4D0:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"popcapgame1.exe"+1F4D0:
+db 01 88 78 55 00 00
+//add [eax+00005578],ecx
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"бохач"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+nop
+
+exit:
+jmp returnhere
+
+"popcapgame1.exe"+1F636:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"popcapgame1.exe"+1F636:
+db 89 B7 78 55 00 00
+//mov [edi+00005578],esi
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>17</Key>
+            <Key>75</Key>
+          </Keys>
+          <ID>0</ID>
+          <ActivateSound TTS="EN">{MRDescription} Activated</ActivateSound>
+          <DeactivateSound TTS="EN">{MRDescription} Deactivated</DeactivateSound>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"No description"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>13B8FD0C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"Auto Assemble script"</Description>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+//jle popcapgame1.exe+958DB
+mov [edi+24],00000000
+
+exit:
+jmp returnhere
+
+"popcapgame1.exe"+958C5:
+jmp newmem
+nop 4
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"popcapgame1.exe"+958C5:
+db 7E 14 C7 47 24 00 00 00 00
+//jle popcapgame1.exe+958DB
+//mov [edi+24],00000000
+</AssemblerScript>
+      <Hotkeys>
+        <Hotkey>
+          <Action>Toggle Activation</Action>
+          <Keys>
+            <Key>17</Key>
+            <Key>74</Key>
+          </Keys>
+          <ID>0</ID>
+          <ActivateSound>Deactivate</ActivateSound>
+          <DeactivateSound>Deactivate</DeactivateSound>
+        </Hotkey>
+      </Hotkeys>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+</CheatTable>
