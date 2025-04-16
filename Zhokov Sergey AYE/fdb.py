@@ -55,7 +55,7 @@ def encounter(location, ability_used, has_artifact, has_weapon):  # Добавл
 
     if event[1] < 0 and not ability_used:
         print(Fore.YELLOW + "Вы используете способность 'Уклонение'!")
-        return ("Вы избежали негативного события!", 0)
+        return ("Вы избежали негативного события!", 10)
 
     if location == "древний храм" and has_artifact:
         print(Fore.GREEN + "Артефакт помог найти вам сокровище")
@@ -96,7 +96,7 @@ def choose_location(has_blueprint): #Добавлена проверка на ч
         if has_blueprint:
             locations.append("древний храм")
         if choice in [str(i) for i in range(1, len(locations)+1)]:
-            return locations[int(choice) - 1]
+            return locations[int(choice) -   1]
         else:
             print(Fore.RED + "Неверный выбор. Попробуйте снова.")
 
