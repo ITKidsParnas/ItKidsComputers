@@ -1,0 +1,4 @@
+@charset "UTF-8";
+/***!  Style Declaration  !***/
+
+#jlexcomment:not(.jcm-xsmall) jcm-level-1 .jcm-list-reply{margin-left:-45px}
