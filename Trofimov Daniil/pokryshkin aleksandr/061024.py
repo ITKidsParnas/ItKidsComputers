@@ -1,9 +1,48 @@
-def gelli(text, text2, count=1):
-    for i in range(count):
-        print(text)
-        print(text2)
+import random
 
-gelli("namanama","namnamnamnam")
+# Словарь с вопросами и ответами
+questions = {
+    "What is the capital of France?": ["1. Berlin", "2. Madrid", "3. Paris", "4. Rome"],
+    "What is the largest ocean on Earth?": ["1. Atlantic Ocean", "2. Indian Ocean", "3. Arctic Ocean", "4. Pacific Ocean"],
+    "What is the currency of the United States?": ["1. Euro", "2. Dollar", "3. Yen", "4. Pound"],
+    "Which planet is known as the Red Planet?": ["1. Earth", "2. Mars", "3. Jupiter", "4. Venus"],
+    "What language is primarily spoken in Brazil?": ["1. Spanish", "2. Portuguese", "3. English", "4. French"]
+}
+
+# Правильные ответы
+correct_answers = {
+    "What is the capital of France?": 3,
+    "What is the largest ocean on Earth?": 4,
+    "What is the currency of the United States?": 2,
+    "Which planet is known as the Red Planet?": 2,
+    "What language is primarily spoken in Brazil?": 2
+}
+
+def quiz():
+    score = 0
+    questions_list = list(questions.keys())
+    
+    # Перемешиваем вопросы
+    random.shuffle(questions_list)
+    
+    for question in questions_list:
+        print(question)
+        for option in questions[question]:
+            print(option)
+        
+        answer = int(input("Choose the correct answer (1-4): "))
+        
+        if answer == correct_answers[question]:
+            print("Correct!\n")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer was {correct_answers[question]}.\n")
+    
+    print(f"Your final score is {score}/{len(questions)}")
+
+if __name__ == "__main__":
+    quiz()
+
 
 
 
