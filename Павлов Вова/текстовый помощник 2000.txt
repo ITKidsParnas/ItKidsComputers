@@ -33,8 +33,11 @@ alt+z-peжим неведимки
 
 subdivision Surface-сглаживает(утюг)
 
+референс-пример
 
+e+z-extrude вниз
 
+s+z+0=плоскость
 
 
 
@@ -107,9 +110,7 @@ subdivision Surface-сглаживает(утюг)
 
 
 
-
-
-
+бу
 
 
 

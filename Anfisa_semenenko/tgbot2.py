@@ -9,8 +9,8 @@ import telebot
 import translate
 from moviepy.audio.io.AudioFileClip import AudioFileClip
 
-bot = telebot.TeleBot("7586583910:AAEpDV_INStjmuWqJdru8tBza9JDyPRhH_Q", parse_mode=None)
-language = 'ru_RU'
+bot = telebot.TeleBot("7586583910:AAEpDV_INStjmuWqJdru8tBza9JDyPRhH_Q", parse_mode=None) #
+language = 'ru_RU' #
 r = sr.Recognizer()
 translator = translate.Translator(to_lang="ru")
 
@@ -47,15 +47,15 @@ def convert_mp4_to_wav(input_file, output_file):
     audio.write_audiofile(output_file)
 
 
-@bot.message_handler(commands=["start", "help"])
+@bot.message_handler(commands=["start", "help"]) #
 def command_response(message):
     print(message.chat.username, ":", message.text)
     if message.text == "/start":
         bot.reply_to(message, "Привет, отправь или перешли мне голосовое сообщение и я его расшифрую")
     if message.text == "/help":
-        bot.reply_to(message, "Отправь или перешли мне голосовое сообщение")
+        bot.reply_to(message, "Отправь или перешли мне голосовое сообщение") #
 
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(content_types=['text']) #
 def text_response(message):
     print(message.chat.username, ":", message.text)
     if "переведи" or "Переведи" in message.text:
