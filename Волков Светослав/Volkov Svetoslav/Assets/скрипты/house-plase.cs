@@ -15,6 +15,6 @@ public class housePlase : MonoBehaviour
 
     private void OnMouseDown()
     {
-        BuildingManager.instance.BuildHouse(gameObject);  
+      //  BuildingManager.instance.BuildHouse(gameObject);  
     }
 }

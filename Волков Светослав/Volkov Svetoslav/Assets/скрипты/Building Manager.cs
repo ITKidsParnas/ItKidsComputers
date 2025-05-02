@@ -7,14 +7,14 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {
     public houses[] housesPrefabs;
-    public MeshFilter ghost;
+    public GameObject ghost;
     private houses CurentHouses;
     public static BuildingManager instance;
     private GameObject priviosGhost;
     public void SetHouse(int houseNum)
     {
         var newHouse = housesPrefabs[houseNum];
-        ghost.gameObject.SetActive(CurentHouses != newHouse);
+        ghost.SetActive(CurentHouses != newHouse);
         if (CurentHouses == newHouse)
         {
             CurentHouses = null;
@@ -27,20 +27,18 @@ public class BuildingManager : MonoBehaviour
         }
 
         var d = CurentHouses.GetComponentInChildren<MeshFilter>();
-        priviosGhost = Instantiate(CurentHouses.gameObject, Vector3.zero, Quaternion.identity);
+        priviosGhost = Instantiate(CurentHouses.gameObject, CurentHouses.transform.position, Quaternion.identity);
         priviosGhost.GetComponent<houses>().enabled = false;
         priviosGhost.transform.SetParent(ghost.transform, false);
     }
-    public void BuildHouse(GameObject housePlase)
-    { 
-        if (CurentHouses == null) return;
+    public void BuildHouse()
+    {
+        if (ghost.activeInHierarchy == false) return;
         if (GAmecontroler.instans.money >= CurentHouses.cost)
         {
             GAmecontroler.instans.money -= CurentHouses.cost;
-            var obj = Instantiate(CurentHouses.gameObject, housePlase.transform.position, Quaternion.identity);
-            obj.transform.rotation = housePlase.transform.rotation;
-            Destroy(housePlase);
-
+            var obj = Instantiate(CurentHouses.gameObject, ghost.transform.position, Quaternion.identity);
+            obj.transform.rotation = ghost.transform.rotation;
         }
     }    
     void Start()
@@ -58,6 +56,10 @@ public class BuildingManager : MonoBehaviour
         if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
         {
             ghost.transform.position = hit.point;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            BuildHouse();
         }
       //  ghost.transform.position = new Vector3(point.x,10.5f, point.z);
     }
