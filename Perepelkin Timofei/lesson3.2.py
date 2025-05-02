@@ -1,18 +1,18 @@
 import turtle
 
-def draw_triangle():
+def draw_spiral():
     screen = turtle.Screen()
     screen.bgcolor("black")
     pen = turtle.Turtle()
     pen.speed(0)
-    colors = ["yellow", "purple", "green", "red", "blue"]
+    colors = ["red", "purple", "black", "grey", "blue"]
 
-    for i in range(360):
+    for i in range(100000):
         pen.color(colors[i % 5])
         pen.width(i // 100 + 1)
         pen.forward(i)
-        pen.left(100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+        pen.left(10000000000000000000000000000000000000000000000000000000000000000000000000000000000)
 
     turtle.done()
 
-draw_triangle()
+draw_spiral()

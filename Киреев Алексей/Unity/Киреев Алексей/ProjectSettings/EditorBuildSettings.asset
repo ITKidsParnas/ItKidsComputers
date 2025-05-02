@@ -4,5 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: d120e509afab475418ce41a52e0904ac
+  - enabled: 1
+    path: Assets/Palmov Island/Low Poly Atmospheric Locations Pack/Scenes/Location
+      wild west railway station.unity
+    guid: a0643ebbed5ccf8409353aa89a4a67dc
+  - enabled: 1
+    path: Assets/Palmov Island/Low Poly Atmospheric Locations Pack/Scenes/Location
+      camping forest.unity
+    guid: 9eb3d3406fabb5b408a4f80927c3710d
   m_configObjects: {}
