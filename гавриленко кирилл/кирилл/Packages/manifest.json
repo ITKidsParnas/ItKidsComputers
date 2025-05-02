@@ -1,7 +1,13 @@
 {
   "dependencies": {
+    "com.unity.ads": "4.4.2",
+    "com.unity.ai.navigation": "1.1.6",
+    "com.unity.analytics": "3.8.1",
     "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.2",
+    "com.unity.postprocessing": "3.4.0",
+    "com.unity.purchasing": "4.11.0",
+    "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.8.7",
     "com.unity.ugui": "2.0.0",
     "com.unity.visualscripting": "1.9.5",

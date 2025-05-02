@@ -14,3 +14,4 @@ while guess != secret_number:
         print("меньше")
     else:
         print("угадал!")
+    
