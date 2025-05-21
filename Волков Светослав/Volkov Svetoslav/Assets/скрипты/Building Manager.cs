@@ -34,6 +34,7 @@ public class BuildingManager : MonoBehaviour
     public void BuildHouse()
     {
         if (ghost.activeInHierarchy == false) return;
+      
         if (GAmecontroler.instans.money >= CurentHouses.cost)
         {
             GAmecontroler.instans.money -= CurentHouses.cost;
@@ -50,6 +51,11 @@ public class BuildingManager : MonoBehaviour
     void Update()
     {
         if (CurentHouses == null) return;
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ghost.transform.Rotate(0, 90, 0);
+
+        }
         Vector3 mouse = Input.mousePosition;
         Ray castPoint = Camera.main.ScreenPointToRay(mouse);
         RaycastHit hit;

@@ -13,8 +13,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
 
-
-
 bot = telebot.TeleBot("7826088357:AAEdQiSU5OEl6CQQtJZTcstYoMKvWcIWv_4", parse_mode=None)
 language = 'ru_RU'
 r = sr.Recognizer()
@@ -69,9 +67,6 @@ def chat(message):
 
     user_input = message.text
 
-   
-
-
 @bot.message_handler(content_types=['voice'])
 def voice_proc(message):
     filename = str(uuid.uuid4())
@@ -102,7 +97,6 @@ def video_note_proccesing(message):
     bot.reply_to(message, text)
     os.remove(file_name_full)
     os.remove(file_name_full_converted)
-
 
 
 bot.infinity_polling()

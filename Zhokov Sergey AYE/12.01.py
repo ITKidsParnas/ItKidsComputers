@@ -1,8 +1,7 @@
 import logging
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
-from telegram import Update
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+import telebot
 
 # Настройки логирования
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -17,15 +16,21 @@ model = AutoModelForCausalLM.from_pretrained(model_name)
 # Хранение истории диалога
 chat_history_ids = None
 
-# Функция обработки команд /start
-def start(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text("Привет! Я бот, с которым можно пообщаться. Чем могу помочь?")
+# Создание экземпляра бота
+API_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
+bot = telebot.TeleBot(API_TOKEN)
+
+# Функция обработки команды /start
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    bot.reply_to(message, "Привет! Я бот, с которым можно пообщаться. Чем могу помочь?")
 
 # Функция обработки текстовых сообщений
-def chat(update: Update, context: CallbackContext) -> None:
+@bot.message_handler(func=lambda message: True)
+def chat(message):
     global chat_history_ids
 
-    user_input = update.message.text
+    user_input = message.text
 
     # Токенизация входного текста
     new_user_input_ids = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors='pt')
@@ -42,26 +47,9 @@ def chat(update: Update, context: CallbackContext) -> None:
     # Декодирование модели и вывод
     bot_response = tokenizer.decode(chat_history_ids[:, input_ids.shape[-1]:][0], skip_special_tokens=True)
     
-    update.message.reply_text(bot_response)
-
-def main():
-    # Создаем объект Updater и получаем диспетчер для регистрации обработчиков
-    updater = Updater("7826088357:AAEdQiSU5OEl6CQQtJZTcstYoMKvWcIWv_4")
-
-    # Получаем диспетчер для регистрации обработчиков
-    dp = updater.dispatcher
-
-    # Обработчики команд
-    dp.add_handler(CommandHandler("start", start))
-
-    # Обработчик текстовых сообщений
-    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, chat))
-
-    # Запускаем бот
-    updater.start_polling()
-
-    # Бот будет работать до нажатия Ctrl+C
-    updater.idle()
+    # Отправка бот-ответа
+    bot.reply_to(message, bot_response)
 
 if __name__ == '__main__':
-    main()
+    # Запуск бота
+    bot.polling(none_stop=True)

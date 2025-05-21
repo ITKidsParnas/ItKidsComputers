@@ -73,7 +73,9 @@ PrefabInstance:
       value: untitled
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 573facc4a6627cf489f7de04ffef4faf, type: 3}
+    - {fileID: -8700617353114198275, guid: 573facc4a6627cf489f7de04ffef4faf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 573facc4a6627cf489f7de04ffef4faf, type: 3}
@@ -100,9 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69002bb70ba000d469f23ade7b67c78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gc: {fileID: 0}
-  house: {fileID: 0}
-  cost: 500
 --- !u!114 &733057781208591161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,5 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17656a903f9a27244b5d352d5fd932f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gc: {fileID: 0}
   moneyInSec: 65
+  cost: 0
+  HateInSec: 0

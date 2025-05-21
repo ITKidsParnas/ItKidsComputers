@@ -55,7 +55,7 @@ def encounter(location, ability_used, has_artifact, has_weapon):  # Добавл
 
     if event[1] < 0 and not ability_used:
         print(Fore.YELLOW + "Вы используете способность 'Уклонение'!")
-        return ("Вы избежали негативного события!", 10)
+        return ("Вы избежали негативного события!", 50)
 
     if location == "древний храм" and has_artifact:
         print(Fore.GREEN + "Артефакт помог найти вам сокровище")

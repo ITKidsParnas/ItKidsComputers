@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1.0f;
     }
     public void Restart()
@@ -22,6 +23,7 @@ public class Menu : MonoBehaviour
     }
     public void Continue()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         menu.SetActive(false);
         Time.timeScale = 1.0f;
         controller.enabled = true;
@@ -31,6 +33,7 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.lockState = CursorLockMode.Confined;
             menu.SetActive(true);
             Time.timeScale = 0f;
             controller.enabled = false;
