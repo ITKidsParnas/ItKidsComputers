@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,13 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menu.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+
     }
 
     public void Restart()
@@ -24,5 +31,17 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(SceneName);
 
     }
+    public void Exit()
+    {
 
+        Application.Quit();
+
+    }
+    public void Continue()
+    {
+
+        menu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
 }

@@ -13,13 +13,31 @@ public class PickItem : MonoBehaviour
     private bool isHolding = false;
     private float originalZPosition; // Сохраняем оригинальную Z-позицию
 
+    public void DestroyItem()
+    {
+        if (heldRb == null) return;
+        {
+            var objToDestroy = heldRb.gameObject;
+            ReleaseObject();
+            Destroy(objToDestroy);
+        }
+    }
+
     void Update()
     {
         HandlePickUp();
-        //    if (Input.GetKey(KeyCode.Mouse2))
-       // {
-                        HandleMovement();
-     //   }
+        if (isHolding)
+        {
+            if (Input.GetKey(KeyCode.Mouse2))
+            {
+                heldRb.transform.SetParent(null, true);   
+                HandleMovement();
+            }
+            else
+            {
+                heldRb.transform.SetParent(holdPoint, true);
+            }
+        }
 
 
     }
@@ -46,6 +64,7 @@ public class PickItem : MonoBehaviour
                         isHolding = true;
                         heldRb.isKinematic = true;
                         heldRb.useGravity = false;
+
                     }
                 }
             }
@@ -81,7 +100,8 @@ public class PickItem : MonoBehaviour
     }
 
     private void ReleaseObject()
-    {
+    { 
+        heldRb.transform.SetParent(null, true);
         if (heldRb != null)
         {
             heldRb.isKinematic = false;
@@ -89,6 +109,7 @@ public class PickItem : MonoBehaviour
             heldRb = null;
         }
         isHolding = false;
+
     }
 
     private void ThrowObject()

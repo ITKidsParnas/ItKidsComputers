@@ -20,11 +20,10 @@ public class LaserCollider : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             Debug.Log("Did Hit");
-            var player = hit.collider.GetComponent<FirstPersonController>();
+            var player = hit.collider.GetComponent<GameOverSystem>();
                 if (player != null) 
                 {
-                    string SceneName = SceneManager.GetActiveScene().name;
-                    SceneManager.LoadScene(SceneName);
+                player.Loose();
                 }
         }
         else
