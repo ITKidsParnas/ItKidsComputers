@@ -14,7 +14,7 @@ public class arrayTest : MonoBehaviour
     {
         foreach (var item1 in transforms)
         {
-     item.psi       
+     //item.psi       
         }
     }
     // Update is called once per frame
